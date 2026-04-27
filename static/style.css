@@ -1,0 +1,125 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2, #ff758c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* CARD */
+.glass-card {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 50px;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* HEADING */
+h1 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+/* UPLOAD */
+.upload-box {
+    display: block;
+    border: 2px dashed white;
+    padding: 40px;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.upload-box input {
+    display: none;
+}
+
+/* PREVIEW */
+#preview {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-top: 20px;
+    border-radius: 15px;
+    display: none;
+}
+
+/* BUTTON */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* RESULT */
+.result {
+    margin-top: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* LOADER */
+#loader {
+    display: none;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+/* DRAG & DROP EFFECT */
+.upload-box {
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    background: rgba(255,255,255,0.2);
+}.logo {
+    width: 140px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+}
