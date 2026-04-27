@@ -1,5 +1,0 @@
-flask
-gunicorn
-pytesseract
-pillow
-pdf2image
