@@ -122,4 +122,24 @@ textarea {
     display: block;
     margin: 0 auto 20px;
     border-radius: 20px;
+}.navbar {
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.navbar h2 {
+    color: white;
+    font-size: 20px;
 }
