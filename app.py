@@ -28,14 +28,14 @@ def index():
             text = ""
 
             try:
-                # 📄 If PDF
+                # 📄 PDF handling (LIMITED PAGES to avoid crash)
                 if file.filename.lower().endswith(".pdf"):
-                    images = convert_from_path(filepath)
+                    images = convert_from_path(filepath, first_page=1, last_page=3)
 
                     for img in images:
                         text += pytesseract.image_to_string(img) + "\n"
 
-                # 🖼️ If Image
+                # 🖼️ Image handling
                 else:
                     img = Image.open(filepath)
                     text = pytesseract.image_to_string(img)
@@ -43,7 +43,6 @@ def index():
             except Exception as e:
                 text = f"Error processing file: {str(e)}"
 
-            # redirect with text
             encoded_text = urllib.parse.quote(text)
             return redirect(url_for("result") + "?text=" + encoded_text)
 
@@ -61,12 +60,12 @@ def result():
 def download():
     text = request.form.get("text", "")
 
-    file = io.BytesIO()
-    file.write(text.encode("utf-8"))
-    file.seek(0)
+    file_data = io.BytesIO()
+    file_data.write(text.encode("utf-8"))
+    file_data.seek(0)
 
     return send_file(
-        file,
+        file_data,
         as_attachment=True,
         download_name="extracted_text.txt",
         mimetype="text/plain"
