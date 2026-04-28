@@ -1,145 +1,112 @@
 /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* BODY */
 body {
-    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding-top: 70px;   /* space for navbar */
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2, #ff758c);
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;   /* horizontal center */
+    align-items: flex-start;   /* push content down */
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* CONTAINER */
-.container {
-    width: 90%;
-    max-width: 1000px;
-}
-
-/* CARD */
-.glass-card {
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.15);
-    padding: 50px;
-    border-radius: 25px;
+/* NAVBAR (TOP FIXED) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    color: white;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-}
+    height: 60px;
 
-/* HEADING */
-h1 {
-    font-size: 42px;
-    margin-bottom: 30px;
-}
-
-/* UPLOAD */
-.upload-box {
-    display: block;
-    border: 2px dashed white;
-    padding: 40px;
-    border-radius: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-bottom: 25px;
-}
-
-.upload-box input {
-    display: none;
-}
-
-/* PREVIEW */
-#preview {
-    width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    margin-top: 20px;
-    border-radius: 15px;
-    display: none;
-}
-
-/* BUTTON */
-button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 20px;
-    border: none;
-    border-radius: 35px;
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* RESULT */
-.result {
-    margin-top: 30px;
-}
-
-textarea {
-    width: 100%;
-    height: 250px;
-    border-radius: 12px;
-    border: none;
-    padding: 15px;
-    font-size: 16px;
-}
-
-/* LOADER */
-#loader {
-    display: none;
-    margin-top: 20px;
-}
-
-.spinner {
-    border: 5px solid rgba(255,255,255,0.3);
-    border-top: 5px solid white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-/* DRAG & DROP EFFECT */
-.upload-box {
-    transition: 0.3s;
-}
-
-.upload-box:hover {
-    background: rgba(255,255,255,0.2);
-}.logo {
-    width: 140px;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 20px;
-}.navbar {
-    width: 100%;
-    padding: 15px 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+
+    padding: 0 20px;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.3);
+
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
+
+    z-index: 1000;
 }
 
 .nav-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
 }
 
 .navbar h2 {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* MAIN CARD */
+.container {
+    margin-top: 40px;
+}
+
+.glass-card {
+    width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+
+    text-align: center;
+}
+
+/* LOGO INSIDE CARD */
+.logo {
+    width: 100px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+/* TITLE */
+h1 {
+    color: white;
+    font-size: 22px;
+}
+
+/* INPUT BOX */
+input[type="file"] {
+    margin: 15px 0;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background: #ff7e5f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+.upload-box {
+    border: 2px dashed rgba(255,255,255,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    margin: 15px 0;
+    display: block;
 }
